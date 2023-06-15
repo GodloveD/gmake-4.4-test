@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: fedora:39
+
+%files
+    hellomake.c
+    hellofunc.c
+    hellomake.h
+    Makefile
+
+%post
+    dnf -y install gcc
+    echo "**********"
+    gmake --version
+    echo "**********"
+    make -j2
